@@ -1,0 +1,40 @@
+#:kivy 2.0.0
+
+<DiningRoomScreen>:
+    name: "dining_room"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        Label:
+            text: "Dining Room"
+            font_size: "30sp"
+            size_hint_y: 0.1
+
+        GridLayout:
+            cols: 2
+            spacing: dp(20)
+            padding: dp(20)
+
+            Label:
+                text: "Light"
+                font_size: "20sp"
+                size_hint_y: 0.7
+                height: self.texture_size[1]
+
+            Switch:
+                id: light_switch
+                #disabled: False
+                size_hint_y: 0.1
+                height: dp(40)
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.2
+            Button:
+                text: "Back"
+                size_hint_x: None
+                width: dp(100)
+                #pos_hint: None, None
+                on_press: app.root.current = "home"

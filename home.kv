@@ -1,0 +1,121 @@
+<HomeScreen>:
+    name: "home"
+
+    FloatLayout:
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            BoxLayout:
+                orientation: "horizontal"
+                size_hint_y: 0.1
+                spacing: dp(20)
+
+                Button:
+                    text: "Menu"
+                    font_size: "20sp"
+                    size_hint_x: None
+                    width: dp(80)
+                    on_release: root.toggle_menu()
+
+                Label:
+                    text: "Welcome Home!"
+                    font_size: "40sp"
+                    size_hint_y: 0.1
+
+            BoxLayout:
+                orientation: "vertical"
+                spacing: dp(10)
+                padding: dp(20)
+
+                GridLayout:
+                    cols: 2
+                    size_hint_y: 0.8    
+                    spacing: dp(20)
+                    padding: dp(20)
+
+                    Button:
+                        text: "Living Room"
+                        font_size: "20sp"
+                        size_hint: 0.9, 0.9
+                        on_press: app.root.current = "living_room"
+
+                    Button:
+                        text: "Kitchen"
+                        font_size: "20sp"
+                        size_hint: 0.9, 0.9
+                        on_press: app.root.current = "kitchen"
+
+                    Button:
+                        text: "Dining Room"
+                        font_size: "20sp"
+                        size_hint: 0.9, 0.9
+                        on_press: app.root.current = "dining_room"
+
+                    Button:
+                        text: "Bedroom"
+                        font_size: "20sp"
+                        size_hint: 0.9, 0.9
+                        on_press: app.root.current = "bedroom"
+
+        BoxLayout:
+            id: menu
+            orientation: "vertical"
+            size_hint_x: None
+            size: dp(200), root.height
+            pos: -self.width, 0.5
+            
+
+            Button:
+                text: "Profile"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("Profile")
+
+            Button:
+                text: "Home"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("Home")
+
+            Button:
+                text: "Settings"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("Settings")
+
+            Button:
+                text: "FAQs"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("FAQs")
+
+            Button:
+                text: "About the project"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("About the project")
+
+            Button:
+                text: "Log out"
+                font_size: "20sp"
+                size_hint_y: None
+                height: dp(50)
+                size_hint_x: None
+                width: dp(200)
+                #on_press: root.menu_option_selected("Log out")
