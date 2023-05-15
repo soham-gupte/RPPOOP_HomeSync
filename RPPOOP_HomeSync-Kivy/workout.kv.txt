@@ -1,0 +1,21 @@
+<LEDControlScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 50
+        spacing: 50
+
+        Label:
+            text: 'LED 1'
+
+        Button:
+            text: 'Turn On'
+            on_press: app.led1_on()
+            on_release: app.led1_off()
+
+        Label:
+            text: 'LED 2'
+
+        Button:
+            text: 'Turn On'
+            on_press: app.led2_on()
+            on_release: app.led2_off()

@@ -1,0 +1,103 @@
+#:kivy 2.0.0
+
+<SignupScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        name: "signup"
+        orientation: "vertical"
+        padding: dp(50)
+        spacing: dp(20)
+
+        BoxLayout:
+            size_hint_y: 0.2
+            Label:
+                text: "Sign up"
+                font_size: "38sp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Label:
+                text: "First name:"
+                font_size: "20sp"
+                size_hint_x: 0.3
+            TextInput:
+                id: first_name_input
+                font_size: "20sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Label:
+                text: "Last name:"
+                font_size: "20sp"
+                size_hint_x: 0.3
+            TextInput:
+                id: last_name_input
+                font_size: "20sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Label:
+                text: "Username:"
+                font_size: "20sp"
+                size_hint_x: 0.3
+            TextInput:
+                id: username_input
+                font_size: "20sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Label:
+                text: "Password:"
+                font_size: "20sp"
+                size_hint_x: 0.3
+            TextInput:
+                id: password_input
+                font_size: "20sp"
+                password: True
+                size_hint_x: 0.7  
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            Label:
+                text: "Confirm password:"
+                font_size: "20sp"
+                size_hint_x: 0.3
+            TextInput:
+                id: confirm_password_input
+                font_size: "20sp"
+                password: True
+                size_hint_x: 0.7  
+
+        Button:
+            text: "Submit"
+            font_size: "18sp"
+            size_hint: None, None
+            size: dp(200), dp(50)
+            pos_hint: { "center_x": 0.5, "y": 0.2}
+            on_press: root.switch_screen(self)
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            Label:
+                text: "Already have an account?"
+                font_size: "20sp"
+                size_hint_x: 0.5
+            Button:
+                text: "Sign In"
+                font_size: "20sp"
+                #color: 0, 0, 1, 1
+                background_normal: ""
+                background_color: 0, 0, 0, 0
+                size_hint_x: 0.5
+                on_press: root.switch_screen(self)

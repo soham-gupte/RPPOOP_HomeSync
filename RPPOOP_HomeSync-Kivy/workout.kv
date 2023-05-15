@@ -1,0 +1,47 @@
+#:kivy 2.0.0
+
+BoxLayout:
+    orientation: "vertical"
+    padding: 50
+
+    Label:
+        text: "LED 1"
+        font_size: "30sp"
+        size_hint: 1, 0.2
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, 0.8
+
+        Button:
+            text: "ON"
+            font_size: "20sp"
+            size_hint: 0.5, 1
+            on_press: app.send_request("/led1/on")
+
+        Button:
+            text: "OFF"
+            font_size: "20sp"
+            size_hint: 0.5, 1
+            on_press: app.send_request("/led1/off")
+
+    Label:
+        text: "LED 2"
+        font_size: "30sp"
+        size_hint: 1, 0.2
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint: 1, 0.8
+
+        Button:
+            text: "ON"
+            font_size: "20sp"
+            size_hint: 0.5, 1
+            on_press: app.send_request("/led2/on")
+
+        Button:
+            text: "OFF"
+            font_size: "20sp"
+            size_hint: 0.5, 1
+            on_press: app.send_request("/led2/off")

@@ -1,0 +1,77 @@
+#:kivy 2.0.0
+
+<LoginScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        name: "login"
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        Label:
+            text: "Welcome to HomeSync!"
+            font_size: "50sp"
+            size_hint_y: 0.3
+
+        Label:
+            text: "Please enter your credentials."
+            font_size: 20
+            size_hint_y: None
+            height: 40
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            Label:
+                text: "Username"
+                font_size: "25sp"
+                size_hint_x: 0.3
+
+            TextInput:
+                id: username_input
+                font_size: "25sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            Label:
+                text: "Password"
+                font_size: "25sp"
+                size_hint_x: 0.3
+
+            TextInput:
+                id: password_input
+                font_size: "25sp"
+                size_hint_x: 0.7
+                password: True
+
+        Button:
+            text: "Login"
+            font_size: "18sp"
+            size_hint: None, None
+            size: dp(200), dp(50)
+            pos_hint: { "center_x": 0.5, "y": 0.2}
+            on_press: root.switch_screen(self)
+
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            Label:
+                text: "Don't have an account?"
+                font_size: "20sp"
+            Button:
+                text: "Sign up"
+                font_size: "20sp"
+                #color: 0, 0, 1, 1
+                background_normal: ""
+                background_color: 0, 0, 0, 0
+                size_hint_x: 0.9
+                on_press: root.switch_screen(self)

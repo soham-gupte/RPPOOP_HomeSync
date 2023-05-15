@@ -1,0 +1,7 @@
+#:kivy 2.0.0
+
+Button:
+    text: 'Turn on LED'
+    state: 'normal'
+    on_state:
+        app.update_led_state(self, self.state)
