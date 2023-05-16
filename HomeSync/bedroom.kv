@@ -1,0 +1,62 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 0, 0, 0, 1
+
+<CButton@Button>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 0, 0, 0, 1
+
+<BedroomScreen>:
+    name: "bedroom"
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        CLabel:
+            text: "Bedroom"
+            font_size: "42sp"
+            bold: True
+            size_hint_y: 0.1
+            color: 1, 1, 1, 1
+
+        GridLayout:
+            cols: 2
+            spacing: dp(20)
+            padding: dp(20)
+
+            CLabel:
+                text: "Light"
+                font_size: "27sp"
+                size_hint_y: 0.7
+                height: self.texture_size[1]
+                color: 1, 1, 1, 1
+
+            Switch:
+                id: light_switch
+                #disabled: False
+                size_hint_y: 0.1
+                height: dp(40)
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.2
+
+            CButton:
+                text: "Back"
+                size_hint: None, None
+                font_size: dp(20)
+                width: dp(100)
+                height: dp(50)
+                background_color: 0.65, 0.68, 0.96, 0.8
+                color: 1, 1, 1, 1
+                on_press: app.root.current = "home"
+            

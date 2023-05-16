@@ -1,0 +1,158 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    multiline: True
+
+<CTextInput@TextInput>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    multiline: False
+
+<CButton@Button>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+
+<SignupScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+    
+    BoxLayout:
+        orientation: "vertical"
+        name: "signup"
+        orientation: "vertical"
+        padding: dp(50)
+        spacing: dp(20)
+
+        BoxLayout:
+            size_hint_y: 0.2
+            CLabel:
+                text: "SIGN UP"
+                font_size: "42sp"
+                #bold: True
+                color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "First name "
+                font_size: "20sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            CTextInput:
+                id: first_name_input
+                font_size: "18sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "Last name "
+                font_size: "20sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            CTextInput:
+                id: last_name_input
+                font_size: "18sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "Username "
+                font_size: "20sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            CTextInput:
+                id: username_input
+                font_size: "18sp"
+                size_hint_x: 0.7
+                
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "Email"
+                font_size: "20sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            CTextInput:
+                id: email_input
+                font_size: "18sp"
+                size_hint_x: 0.7
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "Password "
+                font_size: "20sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            TextInput:
+                id: password_input
+                font_size: "18sp"
+                password: True
+                size_hint_x: 0.7 
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(10)
+
+            CLabel:
+                text: "Confirm \npassword "
+                font_size: "19sp"
+                size_hint_x: 0.3
+                color: 1, 1, 1, 1
+
+            TextInput:
+                id: confirm_password_input
+                font_size: "18sp"
+                password: True
+                size_hint_x: 0.7 
+
+        CButton:
+            text: "Submit"
+            font_size: "20sp"
+            background_color: 0.65, 0.68, 0.96, 0.8
+            size_hint: None, None
+            size: dp(200), dp(50)
+            color: 1, 1, 1, 1
+            pos_hint: { "center_x": 0.5, "y": 0.2}
+            on_press: root.switch_screen(self)
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            CButton:
+                text: "Already have an account? Sign in"
+                font_size: "16sp"
+                background_normal: ""
+                background_color: 0, 0, 0, 0
+                on_press: root.switch_screen(self)
+                color: 1, 1, 1, 1

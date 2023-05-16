@@ -1,0 +1,59 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 0, 0, 0, 1
+
+<CButton@Button>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 0, 0, 0, 1
+
+<MyProfile>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "20dp"
+        padding: "20dp"
+
+        Image:
+            source: "images/user2.png"
+            size_hint: None, None
+            size: 100, 100
+            pos_hint: {"center_x": 0.5}
+
+        CLabel:
+            id: username_label
+            text: "Username: "
+            font_size: dp(30)
+            pos_hint_x: None
+            halign: "left"
+            color: 1, 1, 1, 1
+
+        CLabel:
+            id: password_label
+            text: "Password: "
+            font_size: dp(30)
+            halign: "left"
+            color: 1, 1, 1, 1
+
+        CLabel:
+            id: email_label
+            text: "Email: "
+            font_size: dp(30)
+            halign: "left"
+            color: 1, 1, 1, 1
+
+        CButton:
+            text: "Back"
+            size_hint: None, None
+            font_size: dp(20)
+            width: dp(100)
+            height: dp(50)
+            background_color: 0.65, 0.68, 0.96, 0.8
+            color: 1, 1, 1, 1
+            on_press: app.root.current = "home"
