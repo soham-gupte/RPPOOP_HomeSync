@@ -1,0 +1,137 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 0, 0, 0, 1
+
+<MyButton@Button>:
+    size_hint_y: None
+    height: "48dp"
+    halign: "left"
+    valign: "center"
+    font_size: "23dp"
+    font_name: 'fonts/Nalieta.otf' 
+    background_color: 0.65, 0.68, 0.96, 0.8
+    color: 1, 1, 1, 1
+
+<SettingsScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+        spacing: "16dp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "48dp"
+            spacing: "16dp"
+
+            Image:
+                source: "images/settings.png"
+                size_hint_x: None
+                width: "32dp"
+
+            CLabel:
+                text: "Settings"
+                font_size: "42dp"
+                halign: "left"
+                valign: "middle"
+                bold: True
+                pos_hint: {"x": 0.4, "center_y": 0.5}
+                size_hint_y: 0.1
+                color: 1, 1, 1, 1
+
+        CLabel:
+            text: "General"
+            font_size: "29dp"
+            halign: "left"
+            valign: "middle"
+            text_size: self.width, None
+            bold: True
+            color: 1, 1, 1, 1
+
+        #Canvas:
+        #    Color:
+        #        rgba: 1, 1, 1, 1
+        #    Line:
+        #        points: (self.x, self.y, self.x, self.height)
+        #        width: 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "96dp"
+            spacing: "16dp"
+            padding: "16dp"
+
+            CLabel:
+                text: "Notifications"
+                font_size: "24dp"
+                halign: "left"
+                valign: "middle"
+                text_size: self.width, None
+                color: 1, 1, 1, 1
+
+            Switch:
+                id: notifications_switch
+                active: True
+                size_hint: None, None
+                size: "48dp", "48dp"
+                #halign: "center"
+                #valign: "middle"
+                #pos_hint: { "center_x": 0.5, "center_y": 0.5}
+                #on_active: root.toggle_notifications(args[1])
+
+        CLabel:
+            text: "Legal"
+            font_size: "29dp"
+            halign: "left"
+            valign: "middle"
+            bold: True
+            text_size: self.width, None
+            color: 1, 1, 1, 1
+
+        MyButton:
+            text: "Terms of Use"
+            on_press: print("Terms of Use")
+
+        MyButton:
+            text: "Privacy"
+            on_press: print("Privacy")
+
+        MyButton:
+            text: "Help and Feedback"
+            on_press: print("Help and Feedback")
+
+        MyButton:
+            text: "Security"
+            on_press: print("Security")
+
+        #BoxLayout:
+        #    orientation: "horizontal"
+        #    size_hint_y: None
+        #    height: "48dp"
+        #    spacing: "16dp"
+
+        MyButton:
+            text: "Share"
+            on_press: print("Share")
+
+        #Widget:
+
+        Button:
+            text: "Back"
+            size_hint: None, None
+            font_size: dp(20)
+            width: dp(100)
+            height: dp(50)
+            background_color: 0.65, 0.68, 0.96, 0.8
+            color: 1, 1, 1, 1
+            on_press: app.root.current = "home"
+            font_name: 'fonts/Nalieta.otf' 

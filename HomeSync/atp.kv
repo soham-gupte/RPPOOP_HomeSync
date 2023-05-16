@@ -1,0 +1,65 @@
+#:kivy 2.0.0
+
+<AtpScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "16dp"
+            spacing: "16dp"
+
+            Image:
+                source: "images/atp.png"
+                size_hint_x: None
+                width: "32dp"
+
+            Label:
+                text: "About the project"
+                font_size: "27dp"
+                halign: "left"
+                valign: "middle"
+
+        ScrollView:
+            size_hint: 1, 0.9
+            pos_hint: {"top": 1}
+            #do_scroll_x: False
+            do_scroll_y: True
+            bar_width: dp(25)
+
+            BoxLayout: 
+                orientation: "vertical"
+                size_hint_y: None
+                height: dp(537)
+                spacing: "16dp"
+                padding: "16dp"
+
+                Label:
+                    text: "Our project is a part of the RPPOOP subject.\nOur team, Soham Gupte and Pranjali Jadhav, is working together on developing a smart home automation app. \n\nThe app is designed to control household appliances, such as four LEDs and a mini fan, using an ESP32 microcontroller. The ESP32 will be connected to the appliances through Wi-Fi, allowing users to control their home appliances from anywhere. \n\nWith the smart home automation app, users can conveniently turn the appliances on or off, adjust the brightness of the LEDs, and regulate the speed of the fan. The app offers a simple and user-friendly interface that makes it easy for anyone to operate their home appliances remotely. \n\nOur project is aimed at bringing convenience and flexibility to home automation. We believe that our app will greatly benefit those who are looking for an easy and reliable way to control their household appliances from a distance."
+                    size_hint_y: None
+                    size_hint_x: None
+                    width: "780dp"
+                    text_size: (self.width, None)
+                    height: self.texture_size[1]+ dp(10)
+                    text_size: self.width - dp(20), None
+                    halign: "left"
+                    valign: "middle"
+                    font_size: "22sp"
+                    color: 0.2, 0.2, 0.2, 1
+
+        Button:
+            text: "Back"
+            size_hint_x: None
+            width: dp(100)
+            size_hint_y: None
+            height: dp(50)
+            #pos_hint: None, None
+            on_press: app.root.current = "home"

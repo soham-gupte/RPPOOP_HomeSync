@@ -1,0 +1,142 @@
+#:kivy 2.0.0
+
+<QuestionLabel@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + dp(10)
+    text_size: self.width - dp(20), None
+    halign: "left"
+    valign: "middle"
+    font_size: "20sp"
+    bold: True
+    color: 0.2, 0.2, 0.2, 1
+    font_name: 'fonts/Pottery.ttf'
+
+<AnswerLabel@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + dp(10)
+    text_size: self.width - dp(20), None
+    halign: "left"
+    valign: "middle"
+    font_size: "18sp"
+    color: 0.2, 0.2, 0.2, 1
+    font_name: 'fonts/Pottery.ttf'
+
+<FaqsScreen>:
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "48dp"
+            spacing: "16dp"
+
+            Image:
+                source: "images/faqs.png"
+                size_hint_x: None
+                width: "32dp"
+
+            Label:
+                text: "Frequently Asked Questions"
+                font_size: "24dp"
+                halign: "left"
+                valign: "middle"
+
+        ScrollView:
+            #do_scroll_x: False
+            do_scroll_y: True
+            bar_width: dp(25)
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: dp(1752)
+                padding: "16dp"
+                spacing: "16dp"
+
+                QuestionLabel:
+                    text: "How many devices can the ESP32 control?"
+                AnswerLabel:
+                    text: "The ESP32 can control up to 16 devices through the use of GPIO pins."
+
+                QuestionLabel:
+                    text: "Can I use the ESP32 to control devices over the internet?"
+                AnswerLabel:
+                    text: "Yes, you can use the ESP32 to control devices over the internet by connecting it to a WiFi network and using an online platform to control the devices."
+
+                QuestionLabel:
+                    text: "How can I connect the ESP32 to my home WiFi network?"
+                AnswerLabel:
+                    text: "You can connect the ESP32 to your home WiFi network by providing it with the correct WiFi network name and password in your code."
+
+                QuestionLabel:
+                    text: "Can the ESP32 control devices with different voltage requirements?"
+                AnswerLabel:
+                    text: "Yes, the ESP32 can control devices with different voltage requirements by using a relay or transistor to switch the higher voltage."
+
+                QuestionLabel:
+                    text: "How do I upload code to the ESP32?"
+                AnswerLabel:
+                    text: "You can upload code to the ESP32 using a USB cable and the Arduino IDE."
+
+                QuestionLabel:
+                    text: "How can I add more devices to the ESP32?"
+                AnswerLabel:
+                    text: "You can add more devices to the ESP32 by connecting them to the available GPIO pins on the board."
+
+                QuestionLabel:
+                    text: "Can the ESP32 control devices that require analog inputs?"
+                AnswerLabel:
+                    text: "Yes, the ESP32 can control devices that require analog inputs by using the built-in ADC."
+
+                QuestionLabel:
+                    text: "What is the maximum range of the ESP32?"
+                AnswerLabel:
+                    text: "The maximum range of the ESP32 depends on the strength of the WiFi signal it is connected to."
+
+                QuestionLabel:
+                    text: "What is a smart home automation app?"
+                AnswerLabel:
+                    text: "A smart home automation app is a mobile application that allows you to control and monitor various smart devices in your home, such as lights, thermostats, and security systems, from your smartphone or tablet."
+
+                QuestionLabel:
+                    text: "How does the smart home automation app work with the ESP32 microcontroller?"
+                AnswerLabel:
+                    text: "The ESP32 microcontroller is connected to the smart devices in your home, such as LED lights and mini fans. The smart home automation app communicates with the ESP32 microcontroller over Wi-Fi or Bluetooth to send commands and receive status updates from the connected devices."
+
+                QuestionLabel:
+                    text: "What devices can I control with the smart home automation app?"
+                AnswerLabel:
+                    text: "You can control a variety of smart devices with the smart home automation app, including LED lights, thermostats, smart locks, security systems, and more."
+
+                QuestionLabel:
+                    text: "Can I create custom scenes with the smart home automation app?"
+                AnswerLabel:
+                    text: "Yes, you can create custom scenes with the smart home automation app. For example, you can create a scene called 'Movie Time' that turns off the lights and lowers the blinds in your living room."
+
+                QuestionLabel:
+                    text: "Is the smart home automation app compatible with voice assistants?"
+                AnswerLabel:
+                    text: "Yes, the smart home automation app is compatible with popular voice assistants like Amazon Alexa and Google Assistant. You can control your smart devices with voice commands, as well as with the app."
+
+                QuestionLabel:
+                    text: "How secure is the smart home automation app?"
+                AnswerLabel:
+                    text: "The smart home automation app uses the latest encryption and security protocols to protect your privacy."
+
+        Button:
+            text: "Back"
+            size_hint_x: None
+            width: dp(100)
+            size_hint_y: None
+            height: dp(50)
+            #pos_hint: None, None
+            on_press: app.root.current = "home"
