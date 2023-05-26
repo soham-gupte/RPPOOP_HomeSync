@@ -4,7 +4,7 @@ import usocket as socket
 import time
 import network
 
-server = Server('soham88gupte@gmail.com')
+server = Server('soham88gupte@gmail.com', 'soham-gupte')
 server.connect_wifi('AndroidAPC371', 'passwordnahimilnar')
 server.start_server()
 
