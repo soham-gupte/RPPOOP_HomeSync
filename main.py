@@ -5,6 +5,13 @@ import network
 
 FAN_SPEEDS = [150, 60, 55, 50, 40, 30]
 
+def find_pos(strn, start, char) :
+    while (len(strn)) :
+        if strn[start] == char :
+            return start
+        start += 1
+    return 0 
+
 def get_user(username) :
     with open("database.csv", "r") as file :
         lines = file.readlines()
@@ -12,7 +19,6 @@ def get_user(username) :
         line = line.strip().split(",")
         if (line[0] == username) :
             return line
-    file.close()
     
 def update_status(search_email, user_status) :
     with open("database.csv", "r") as file:
@@ -117,10 +123,11 @@ class LivingRoom(HomeSync) :
 
 class Server:
     
-    def __init__(self, username):
+    def __init__(self, username, password):
         self.timeout = 0
         self.wifi = network.WLAN(network.STA_IF)
         self.username = username
+        self.password = password
         
     def connect_wifi(self, ssid, password):
         self.wifi.active(False)
@@ -139,6 +146,19 @@ class Server:
         if self.wifi.isconnected():
             print('Connected...')
             print('Network config:', self.wifi.ifconfig())
+            
+    def auth_login(self, username, password) :
+        with open("database.csv", "r") as file :
+            lines = file.readlines()
+        for line in lines:
+            line = line.strip().split(",")
+            if (line[9] == username and line[1] == password) :
+                return True
+        return False
+    
+    def signup(self, request) :
+        with open('database.csv', 'a') as file:
+            file.write(f"\n{request[0]},{request[1]},{request[2]},{request[3]},0,0,0,0,150,{request[4]}")
             
     def start_server(self) :
         
@@ -160,6 +180,30 @@ class Server:
 
         s.listen(5)  # It will handle a maximum of 5 clients at a time
         print("Server started...")
+        
+        while True :
+            connection_socket, address = s.accept()
+            request = connection_socket.recv(1024)  # Storing response coming from the client
+            print("Content", request)  # Printing response
+            request = str(request)
+            if request.find('/signup/') == 22 :
+                request = request[30:-1]
+                request = request.split('/')
+                print(request)
+                self.signup(request)
+                continue
+            request = request[23:-1]
+            request = request.split('/')
+            print(request)
+            if self.auth_login(request[0], request[1]) :
+                print("Valid login!")
+                connection_socket.send(bytes("1", "utf-8"))
+                connection_socket.close()
+                break
+            else :
+                print("Invalid login!")
+                connection_socket.send(bytes("0", "utf-8"))
+                connection_socket.close()
         
         while True :
             
