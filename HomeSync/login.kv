@@ -1,0 +1,134 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    bold: True
+    #outline_color: 0, 0, 0, 0
+    #outline_width: 0.3  
+
+<CTextInput@TextInput>: 
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    bold: True
+    #outline_color: 0, 0, 0, 0
+    #outline_width: 0.3 
+
+<CButton@Button>:
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    bold: True
+    #outline_color: 0, 0, 0, 0
+    #outline_width: 0.3 
+
+<LoginScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        name: "login"
+        spacing: dp(10)
+        padding: dp(20)
+
+        Label:
+            text: "HomeSync"
+            font_name: 'fonts/Fantastica.ttf'
+            #outline_color: 0, 0, 0, 0
+            #outline_width: 0.2  
+            font_size: "74sp"
+            size_hint_y: 0.3
+            bold: True
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+        CLabel:
+            text: "Please enter your credentials."
+            font_size: "22dp"
+            size_hint_y: None
+            height: "40dp"
+            bold: True
+            color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(32)
+            spacing: dp(10)
+
+            CLabel:
+                text: "Username"
+                font_size: "21sp"
+                size_hint_x: 0.4
+                color: 1, 1, 1, 1
+
+            CTextInput:
+                id: username_input
+                font_size: "20sp"
+                #size_hint_x: 0.7
+                #size_hint_y: 0.5
+                pos_hint: {"center_x": 0.5}
+                multiline: False
+                color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(32)
+            spacing: dp(10)
+
+            CLabel:
+                text: "Password"
+                font_size: "21sp"
+                size_hint_x: 0.4
+                color: 1, 1, 1, 1
+
+            TextInput:
+                id: password_input
+                font_size: "20sp"
+                #size_hint_x: 0.7
+                #width: "250sp"
+                pos_hint: {"center_x": 0.5}
+                password: True
+                multiline: False
+                color: 1, 1, 1, 1
+
+        BoxLayout: 
+            orientation: "vertical"
+            size_hint_y: 0.1
+            padding: dp(32)
+            spacing: dp(20)
+
+            CButton:
+                text: "Login"
+                font_size: "20sp"
+                background_color: 0.65, 0.68, 0.96
+                size_hint: None, None
+                size: dp(200), dp(50)
+                color: 1, 1, 1, 1
+                pos_hint: {"center_x": 0.5, "y": 0.2}
+                on_press: root.login()
+
+            CLabel:
+                id: status_label
+                background_color: " "
+                font_size: "18sp"
+                text: ""
+                color: 1, 1, 1, 1
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.1
+            padding: dp(20)
+
+            CButton:
+                text: "Dont have an account? Sign up"
+                color: 1, 1, 1, 1
+                font_size: "16sp"
+                background_normal: ""
+                background_color: 0, 0, 0, 0
+                #on_press: root.switch_screen(self)
+                on_press: app.root.current = "signup"
+                

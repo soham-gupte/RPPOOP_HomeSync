@@ -1,0 +1,136 @@
+#:kivy 2.0.0
+
+<QuestionLabel@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + dp(10)
+    text_size: self.width - dp(20), None
+    halign: "left"
+    valign: "middle"
+    font_size: "20sp"
+    bold: True
+    #color: 0.2, 0.2, 0.2, 1
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    #font_name: 'fonts/Pottery.ttf'
+
+<AnswerLabel@Label>:
+    size_hint_y: None
+    height: self.texture_size[1] + dp(10)
+    text_size: self.width - dp(20), None
+    halign: "left"
+    valign: "middle"
+    font_size: "18sp"
+    font_name: 'fonts/Nalieta.otf' 
+    color: 1, 1, 1, 1
+    #color: 0.2, 0.2, 0.2, 1
+    #font_name: 'fonts/Pottery.ttf'
+
+<FaqsScreen>:
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "48dp"
+            spacing: "16dp"
+
+            Image:
+                source: "images/faqs.png"
+                size_hint_x: None
+                width: "32dp"
+
+            Label:
+                text: "Frequently Asked Questions"
+                font_name: 'fonts/Nalieta.otf'
+                font_size: "30dp"
+                halign: "left"
+                valign: "middle"
+
+        ScrollView:
+            #do_scroll_x: False
+            do_scroll_y: True
+            bar_width: dp(25)
+
+            BoxLayout:
+                orientation: "vertical"
+                size_hint_y: None
+                height: dp(2070)
+                padding: "16dp"
+                spacing: "16dp"
+
+                QuestionLabel:
+                    text: "Q.How many devices can the ESP32 control?"
+                AnswerLabel:
+                    text: "A.The ESP32 can control up to 16 devices through the use of GPIO pins."
+
+                QuestionLabel:
+                    text: "Q.Can I use the ESP32 to control devices over the internet?"
+                AnswerLabel:
+                    text: "A.Yes, you can use the ESP32 to control devices over the internet by connecting it to a WiFi network and using an online platform to control the devices."
+
+                QuestionLabel:
+                    text: "Q.How can I connect the ESP32 to my home WiFi network?"
+                AnswerLabel:
+                    text: "A.You can connect the ESP32 to your home WiFi network by providing it with the correct WiFi network name and password in your code."
+
+                QuestionLabel:
+                    text: "Q.Can the ESP32 control devices with different voltage requirements?"
+                AnswerLabel:
+                    text: "A.Yes, the ESP32 can control devices with different voltage requirements by using a relay or transistor to switch the higher voltage."
+
+                QuestionLabel:
+                    text: "Q.How do I upload code to the ESP32?"
+                AnswerLabel:
+                    text: "A.You can upload code to the ESP32 using a USB cable and the Arduino IDE."
+
+                QuestionLabel:
+                    text: "Q.How can I add more devices to the ESP32?"
+                AnswerLabel:
+                    text: "A.You can add more devices to the ESP32 by connecting them to the available GPIO pins on the board."
+
+                QuestionLabel:
+                    text: "Q.Can the ESP32 control devices that require analog inputs?"
+                AnswerLabel:
+                    text: "A.Yes, the ESP32 can control devices that require analog inputs by using the built-in ADC."
+
+                QuestionLabel:
+                    text: "Q.What is the maximum range of the ESP32?"
+                AnswerLabel:
+                    text: "A.The maximum range of the ESP32 depends on the strength of the WiFi signal it is connected to."
+
+                QuestionLabel:
+                    text: "Q.What is a smart home automation app?"
+                AnswerLabel:
+                    text: "A.A smart home automation app is a mobile application that allows you to control and monitor various smart devices in your home, such as lights, thermostats, and security systems, from your smartphone or tablet."
+
+                QuestionLabel:
+                    text: "Q.How does the smart home automation app work with the ESP32 microcontroller?"
+                AnswerLabel:
+                    text: "A.The ESP32 microcontroller is connected to the smart devices in your home, such as LED lights and mini fans. The smart home automation app communicates with the ESP32 microcontroller over Wi-Fi or Bluetooth to send commands and receive status updates from the connected devices."
+
+                QuestionLabel:
+                    text: "Q.What devices can I control with the smart home automation app?"
+                AnswerLabel:
+                    text: "A.You can control a variety of smart devices with the smart home automation app, including LED lights, thermostats, smart locks, security systems, and more."
+
+        Button:
+            text: "Back"
+            size_hint_x: None
+            width: dp(100)
+            size_hint_y: None
+            height: dp(50)
+            color: 1, 1, 1, 1
+            font_size: dp(20)
+            background_color: 0.65, 0.68, 0.96, 0.8
+            #pos_hint: None, None
+            font_name: 'fonts/Nalieta.otf'
+            on_press: app.root.current = "home"
