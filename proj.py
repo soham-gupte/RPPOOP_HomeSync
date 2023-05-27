@@ -4,9 +4,11 @@ import usocket as socket
 import time
 import network
 
-server = Server('soham88gupte@gmail.com', 'soham-gupte')
+server = Server()
 server.connect_wifi('AndroidAPC371', 'passwordnahimilnar')
-server.start_server()
+server.init_server()
+while True :
+    server.start_server()
 
 # Code first starts with connecting to wifi
 # Then waits for login to be successful
