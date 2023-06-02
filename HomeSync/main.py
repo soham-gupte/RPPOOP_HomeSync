@@ -20,6 +20,8 @@ from kivy.graphics import Canvas, Rectangle
 from kivy.config import Config
 from kivy.core.text import LabelBase
 from kivy.core.window import Window
+import socket
+from imp_fns import *
 
 class HomeSync(App):
 
@@ -41,7 +43,7 @@ class HomeSync(App):
         sm.add_widget(FaqsScreen(name= 'faqs'))
         sm.add_widget(AtpScreen(name= 'atp'))
         return sm
-    
+
 if __name__ == '__main__':
     HomeSync().run()
 
