@@ -1,0 +1,125 @@
+#:kivy 2.0.0
+
+<CLabel@Label>:
+    font_name: 'fonts/Nalieta.otf' 
+    #color: 0, 0, 0, 1
+    color: 1, 1, 1, 1
+
+<CButton@Button>:
+    font_name: 'fonts/Nalieta.otf' 
+    #color: 0, 0, 0, 1
+    color: 1, 1, 1, 1
+
+<CTextInput@TextInput>:
+    font_name: 'fonts/Nalieta.otf' 
+    #color: 0, 0, 0, 1
+    color: 1, 1, 1, 1
+    multiline: False
+
+<LivingRoomScreen>:
+
+    light_switch: light_switch
+    fan_switch: fan_switch
+    fan_slider: fan_slider
+    fan_label: fan_label
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    name: "living_room"
+    BoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(20)
+
+        CLabel:
+            text: "Living Room"
+            color: 1, 1, 1, 1
+            font_size: "42sp"
+            size_hint_y: 0.1
+
+        GridLayout:
+            cols: 2
+            spacing: dp(20)
+            padding: dp(20)
+
+            CLabel:
+                text: "Light"
+                font_size: "27sp"
+                size_hint_y: 0.7
+                color: 1, 1, 1, 1
+                height: self.texture_size[1]
+
+            Switch:
+                id: light_switch
+                #disabled: False
+                size_hint_y: 0.1
+                height: dp(40)
+
+            #Canvas:
+            #Color:
+                #rgba: 1, 1, 1, 1
+            #Line:
+                #points: (self.x, self.y, self.x, self.height)
+                #width: 1
+
+            CLabel:
+                text: "Fan"
+                font_size: "27sp"
+                size_hint_y: 0.7
+                color: 1, 1, 1, 1
+                height: self.texture_size[1]
+
+            Switch:
+                id: fan_switch
+                active: False
+                size_hint_y: 0.1
+                height: dp(40)
+
+        BoxLayout:
+            orientation: "horizontal"
+            spacing: dp(10)
+            padding: dp(20)
+
+            Slider:
+                orientation: "vertical"
+                id: fan_slider
+                min: 1
+                max: 5
+                step: 1
+                value: 1
+                opacity: 0 if not fan_switch.active else 1
+                #on_value_pos: fan_label.text = str(int(self.value))
+                #on_touch_up: if fan_switch.active: str(int(self.value))
+
+            Label:
+                id: fan_label 
+                text: str(int(fan_slider.value))
+                opacity: 0 if not fan_switch.active else 1
+                color: 1, 1, 1, 1
+                font_size: dp(30)
+
+            #CTextInput:
+            #    id: fan_speed_textinput
+            #    text: str(int(fan_slider.value)) if fan_switch.active else '0'
+            #    disabled: not fan_switch.active
+            #    on_text_validate: fan_slider.value = int(self.text)
+            #    on_focus: if not self.focus: self.text = str(int(fan_slider.value))
+            #    #background_color: (0, 0, 0, 0)
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: 0.2
+
+            CButton:
+                text: "Back"
+                size_hint: None, None
+                font_size: dp(20)
+                width: dp(100)
+                height: dp(50)
+                background_color: 0.65, 0.68, 0.96, 0.8
+                color: 1, 1, 1, 1
+                on_press: app.root.current = "home"

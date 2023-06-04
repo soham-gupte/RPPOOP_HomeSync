@@ -1,0 +1,71 @@
+#:kivy 2.0.0
+
+<AtpScreen>:
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/grad2.jpg"
+
+    BoxLayout:
+        orientation: "vertical"
+        padding: "16dp"
+
+        BoxLayout:
+            orientation: "horizontal"
+            size_hint_y: None
+            height: "16dp"
+            spacing: "16dp"
+
+            Image:
+                source: "images/atp.png"
+                size_hint_x: None
+                width: "32dp"
+
+            Label:
+                text: "About the project"
+                font_name: 'fonts/Nalieta.otf' 
+                font_size: "29dp"
+                halign: "left"
+                valign: "middle"
+
+        ScrollView:
+            size_hint: 1, 0.9
+            pos_hint: {"top": 1}
+            #do_scroll_x: False
+            do_scroll_y: True
+            bar_width: dp(25)
+
+            BoxLayout: 
+                orientation: "vertical"
+                size_hint_y: None
+                height: dp(680)
+                spacing: "16dp"
+                padding: "16dp"
+
+                Label:
+                    text: "Our project is a part of the RPPOOP \nsubject.Our team, Soham Gupte and\n Pranjali Jadhav, is working together on developing\n a smart home automation app. \n\nThe app is designed to control household \nappliances, such as four LEDs and a mini fan, \nusing an ESP32 microcontroller. The ESP32 \nwill be connected to the appliances through \nWi-Fi, allowing users to control their \nhome appliances from anywhere. \n\nWith the smart home automation app, \nusers can conveniently turn the appliances on or off,\n adjust the brightness of the LEDs,\n and regulate the speed of the fan. \nThe app offers a simple and user-friendly interface\n that makes it easy for anyone to operate their \nhome appliances remotely. \n\nOur project is aimed at bringing \nconvenience and flexibility to home automation.\n We believe that our app will greatly benefit \nthose who are looking for an easy and \nreliable way to control their household \nappliances from a distance."
+                    size_hint_y: None
+                    size_hint_x: None
+                    width: "780dp"
+                    text_size: (self.width, None)
+                    height: self.texture_size[1]+ dp(10)
+                    text_size: self.width - dp(20), None
+                    halign: "left"
+                    valign: "middle"
+                    font_size: "20sp"
+                    font_name: 'fonts/Nalieta.otf' 
+                    color: 1, 1, 1, 1
+
+        Button:
+            text: "Back"
+            size_hint_x: None
+            width: dp(100)
+            size_hint_y: None
+            height: dp(50)
+            #pos_hint: None, None
+            on_press: app.root.current = "home"
+            font_name: 'fonts/Nalieta.otf' 
+            font_size: dp(20)
+            background_color: 0.65, 0.68, 0.96, 0.8
+            color: 1, 1, 1, 1
