@@ -10,8 +10,13 @@ from kivy.uix.textinput import TextInput
 import socket
 from imp_fns import *
 import time
+from living_room import LivingRoomScreen
+from kitchen import KitchenScreen
+from dining_room import DiningRoomScreen
+from bedroom import BedroomScreen
 
 class LoginScreen(Screen):
+
 
     Builder.load_file('login.kv')
     Builder.load_file('signup.kv')
@@ -32,6 +37,8 @@ class LoginScreen(Screen):
         
         username = self.ids.username_input.text
         password = self.ids.password_input.text
+
+        self.username_input = username
 
         if not check_login(username, password) :
             self.ids.status_label.text = "Invalid credentials! Please try again."
@@ -54,6 +61,6 @@ class LoginScreen(Screen):
         print(response)
 
         if int(response) :
-            self.ids.status_label.text = "Login succesful!"
+            # self.ids.status_label.text = "Login succesful!"
             time.sleep(0.5)
             self.manager.current = 'home'

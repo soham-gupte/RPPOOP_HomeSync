@@ -22,6 +22,7 @@ class LivingRoomScreen(Screen):
     fan_label = ObjectProperty(None)
 
     def toggle_light(self):
+        print(self.light_switch.active)
         x = LED_URL + "0"
         UrlRequest(x)
 

@@ -11,6 +11,7 @@ from kivy.network.urlrequest import UrlRequest
 from database_code import *
 
 class DiningRoomScreen(Screen):
+    light_switch = ObjectProperty(None)
     Builder.load_file('dining_room.kv')
 
     def toggle_light(self):
