@@ -12,6 +12,27 @@ class HomeScreen(Screen):
     menu_active = BooleanProperty(False)
     menu_width = NumericProperty(dp(250))
 
+    kitchen_light_switch = ObjectProperty(None)
+    living_room_light_switch = ObjectProperty(None)
+    dining_room_light_switch = ObjectProperty(None)
+    bedroom_light_switch = ObjectProperty(None)
+    living_room_fan_switch = ObjectProperty(None)
+    light_switch = ObjectProperty(None)
+
+    def master_off(self):
+    # Control all light switches to turn them off
+        for screen_name in ['kitchen', 'living_room', 'dining_room', 'bedroom']:
+            screen = self.manager.get_screen(screen_name)
+            light_switch = screen.ids.light_switch
+
+            if light_switch:
+                light_switch.active = False
+
+        # Handle the living room fan switch separately
+        living_room_fan_switch = self.manager.get_screen('living_room').ids.fan_switch
+        if living_room_fan_switch:
+            living_room_fan_switch.active = False
+
     def toggle_menu(self):
         self.menu_active = not self.menu_active
         #menu_width = self.width
