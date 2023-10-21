@@ -1,0 +1,30 @@
+{
+    "default": {
+        "background_color": [1, 1, 1, 1],
+        "text_color": [0, 0, 0, 1],
+        "button_color": [0.65, 0.68, 0.96, 1],
+        "font_name": "fonts/Nalieta.otf",
+        "background_color_button": [0.65, 0.68, 0.96, 1],
+        "color_button": [1, 1, 1, 1],
+        "font_size_button": "20sp",
+        "size_hint_button": [null, null],
+        "size_button": [200, 50]
+    },
+    "dark": {
+        "background_color": [0, 0, 0, 1],
+        "text_color": [1, 1, 1, 1],
+        "font_name": "fonts/Nalieta.otf",
+        "button_color": [0.2, 0.2, 0.2, 1]
+    },
+    "green": {
+        "background_color": [0.1, 0.3, 0.1, 1],
+        "text_color": [1, 1, 1, 1],
+        "button_color": [0.1, 0.5, 0.1, 1],
+        "font_name": "fonts/Nalieta.otf",
+        "background_color_button": [0.65, 0.68, 0.96, 1],
+        "color_button": [1, 1, 1, 1],
+        "font_size_button": "20sp",
+        "size_hint_button": [null, null],
+        "size_button": [200, 50]
+    }
+}

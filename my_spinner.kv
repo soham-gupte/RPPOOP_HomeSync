@@ -1,0 +1,15 @@
+<MySpinnerOption>:
+    height: "36dp"  # Customize the height of each dropdown option
+    canvas.before:
+        Color:
+            rgba: (0.2, 0.2, 0.2, 1)  # Background color for each dropdown option
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: (1, 1, 1, 1)  # Text color for each dropdown option
+    Label:
+        text: root.text
+        center_y: self.parent.center_y
+        size_hint_x: 0.9
+        padding_x: "8dp"  # Adjust left padding for the text
