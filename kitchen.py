@@ -7,10 +7,10 @@ from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.properties import ObjectProperty, StringProperty
+from home import HomeScreen
 
 class KitchenScreen(Screen):
     Builder.load_file('kitchen.kv')
-    background_image = StringProperty("images/grad2.jpg")
+    #background_image = StringProperty("images/grad2.jpg")
 
-    def on_pre_enter(self):
-        self.ids.background_image.source = self.background_image
+    

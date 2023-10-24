@@ -44,11 +44,16 @@ class HomeScreen(Screen):
 
     def on_dropdown_select(self, selected_option):
         if selected_option == "Dark":
-            self.background_image = "images/dark.jpg"
+            self.app.set_selected_background("images/dark.jpg")
         elif selected_option == "Light":
-            self.background_image = "images/light.jpg"
+            self.app.set_selected_background("images/light.jpg")
         elif selected_option == "Default":
-            self.background_image = "images/grad2.jpg"
+            self.app.set_selected_background("images/grad2.jpg")
+
+    '''def switch_to_kitchen(self):
+        kitchen_screen = self.manager.get_screen("kitchen")
+        kitchen_screen.background_image = self.background_image
+        self.manager.current = "kitchen"'''
 
     '''def on_start(self):
         # Load the initial theme from themes.json
