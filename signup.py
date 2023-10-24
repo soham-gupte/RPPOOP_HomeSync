@@ -32,18 +32,6 @@ class SignupScreen(Screen):
                 'password': password
             }
 
-            #url = 'http://<ESP32_SERVER_IP_ADDRESS>/signup_endpoint' 
-            # Replace with your actual server URL
-            #response = requests.post(url, json=signup_data)
-
-            # Handle the server response
-            #if response.status_code == 200:
-                # Successful signup
-            #    self.manager.current = 'login'
-            #else:
-                # Failed signup
-            #    self.ids.status_label.text = 'Signup failed. Please try again.'
-
         elif button.text == "Already have an account? Sign in":
             self.manager.current = 'login'
 

@@ -10,3 +10,7 @@ from kivy.properties import ObjectProperty, StringProperty
 
 class KitchenScreen(Screen):
     Builder.load_file('kitchen.kv')
+    background_image = StringProperty("images/grad2.jpg")
+
+    def on_pre_enter(self):
+        self.ids.background_image.source = self.background_image

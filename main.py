@@ -22,11 +22,6 @@ from kivy.core.text import LabelBase
 from kivy.core.window import Window
 import csv
 
-'''filename = 'user_data.csv'  
-with open(filename, 'w', newline='') as file:
-    pass
-print(f"Empty CSV file '{filename}' created.")'''
-
 class HomeSync(App):
 
     def build(self):
