@@ -59,13 +59,6 @@
                 size_hint_y: 0.1
                 height: dp(40)
 
-            #Canvas:
-            #Color:
-                #rgba: 1, 1, 1, 1
-            #Line:
-                #points: (self.x, self.y, self.x, self.height)
-                #width: 1
-
             CLabel:
                 text: "Fan"
                 font_size: "27sp"
@@ -101,14 +94,6 @@
                 opacity: 0 if not fan_switch.active else 1
                 color: 1, 1, 1, 1
                 font_size: dp(30)
-
-            #CTextInput:
-            #    id: fan_speed_textinput
-            #    text: str(int(fan_slider.value)) if fan_switch.active else '0'
-            #    disabled: not fan_switch.active
-            #    on_text_validate: fan_slider.value = int(self.text)
-            #    on_focus: if not self.focus: self.text = str(int(fan_slider.value))
-            #    #background_color: (0, 0, 0, 0)
 
         BoxLayout:
             orientation: "horizontal"

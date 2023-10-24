@@ -1,9 +1,5 @@
 from kivy.app import App 
 from kivy.uix.screenmanager import ScreenManager
-from kivy.uix.label import Label
-from kivy.properties import ObjectProperty
-from kivy.properties import ListProperty
-from kivy.lang.builder import Builder
 from login import LoginScreen
 from signup import SignupScreen
 from home import HomeScreen
@@ -16,11 +12,7 @@ from settings import SettingsScreen
 from faqs import FaqsScreen
 from atp import AtpScreen
 from new import new
-from kivy.graphics import Canvas, Rectangle
-from kivy.config import Config
-from kivy.core.text import LabelBase
 from kivy.core.window import Window
-import csv
 from kivy.properties import StringProperty
 
 class HomeSyncApp(App):
@@ -41,7 +33,7 @@ class HomeSyncApp(App):
         sm.add_widget(SettingsScreen(name='settings'))
         sm.add_widget(FaqsScreen(name='faqs'))
         sm.add_widget(AtpScreen(name='atp'))
-        home_screen.app = self  # Pass a reference to the app to the home screen
+        home_screen.app = self 
         return sm
 
     def set_selected_background(self, background_image):

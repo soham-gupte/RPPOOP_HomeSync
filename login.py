@@ -2,8 +2,6 @@ from kivy.uix.screenmanager import Screen
 from kivy.lang.builder import Builder
 from kivy.properties import ObjectProperty
 from kivy.core.image import Image as CoreImage
-from kivy.graphics import Canvas
-from kivy.graphics import Rectangle
 import requests
 
 
@@ -34,9 +32,6 @@ class LoginScreen(Screen):
         else:
             # Failed login
             self.ids.status_label.text = 'Invalid credentials. Please try again.'
-
-
-        #print("Login with username:", self.username_input.text, "and password:", self.password_input.text)
 
     def sign_up(self):
         from login import LoginScreen

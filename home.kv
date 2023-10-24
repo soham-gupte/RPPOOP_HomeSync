@@ -119,16 +119,6 @@
                         background_color: 0.65, 0.68, 0.96, 0.8
                         color: 1, 1, 1, 1
 
-                    #CLabel:
-                    #    text: "Change Background: "
-                    #    color: 1, 1, 1, 1
-
-                    #DropDown:
-                    #    id: background_dropdown
-                    #    on_select: root.on_dropdown_select(self.text)
-
-                        
-
         BoxLayout:
             orientation: "horizontal"
             size_hint_y: 0.1
@@ -168,22 +158,6 @@
                 background_color: 0.65, 0.68, 0.96, 0.8
                 color: 1, 1, 1, 1
                 on_release: root.on_dropdown_select("Light")
-
-
-            
-
-#            MySpinner:
-#                text: "Select Theme"
-#                values: ["default", "dark", "green"]
-#                on_release: root.set_theme(self.text)
-#                size_hint: None, None
-#                font_size: dp(20)
-#                width: dp(150)
-#                height: dp(50)
-#                background_color: 0.65, 0.68, 0.96, 0.8
-#                color: 1, 1, 1, 1
-#                dropdown_cls: "MySpinnerOption"
-#                id: theme_spinner
 
         BoxLayout:
             id: menu
