@@ -14,7 +14,6 @@ from atp import AtpScreen
 from new import new
 from kivy.core.window import Window
 from kivy.properties import StringProperty
-from 
 
 class HomeSyncApp(App):
     selected_background = StringProperty("images/grad2.jpg")
